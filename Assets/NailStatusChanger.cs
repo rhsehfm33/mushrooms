@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class NailImageChanger : MonoBehaviour
+public class NailStatusChanger : MonoBehaviour
 {
     private readonly int NAIL_IN = 0;
     private readonly int NAIL_OUT = 1;
