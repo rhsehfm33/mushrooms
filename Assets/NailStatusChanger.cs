@@ -26,7 +26,7 @@ public class NailStatusChanger : MonoBehaviour
 
     private void respondToNailSelect()
     {
-        if (NailManager.Instance.selectedNail == _myNail)
+        if (NailManager.Instance.GetSelectedNail() == _myNail)
         {
             _currentSpriteIndex = NAIL_OUT; 
         }

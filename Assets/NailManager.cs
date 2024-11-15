@@ -5,7 +5,7 @@ public class NailManager : MonoBehaviour
 {
     public static NailManager Instance { get; private set; }
     public event Action OnNailSelectEvent;
-    public GameObject selectedNail;
+    private GameObject _selectedNail;
 
     private void Awake()
     {
@@ -18,9 +18,14 @@ public class NailManager : MonoBehaviour
         Instance = this;
     }
 
+    public GameObject GetSelectedNail()
+    {
+        return _selectedNail;
+    }
+
     public void SelectNail(GameObject nail)
     {
-        selectedNail = nail;
+        _selectedNail = nail;
         OnNailSelectEvent?.Invoke();
     }
 }
