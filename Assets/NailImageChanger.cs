@@ -8,33 +8,46 @@ public class NailImageChanger : MonoBehaviour
     private readonly int NAIL_OUT = 1;
 
     public Sprite[] sprites; // 변경할 Sprite 배열
-    private SpriteRenderer spriteRenderer;
-    private int currentSpriteIndex = 0;
+    private SpriteRenderer _spriteRenderer;
+    private int _currentSpriteIndex = 0;
+    private GameObject _myNail;
 
     private void Start()
     {
         // 현재 GameObject의 SpriteRenderer 가져오기
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer == null)
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        if (_spriteRenderer == null)
         {
             Debug.LogError("SpriteRenderer가 이 GameObject에 없습니다!");
         }
+
+        _myNail = transform.parent.gameObject;
+        NailManager.Instance.OnNailSelectEvent += respondToNailSelect;
+    }
+
+    private void respondToNailSelect()
+    {
+        if (NailManager.Instance.selectedNail == _myNail)
+        {
+            _currentSpriteIndex = NAIL_OUT; 
+        }
+        else
+        {
+            _currentSpriteIndex = NAIL_IN;
+        }
+        _spriteRenderer.sprite = sprites[_currentSpriteIndex];
     }
 
     private void OnMouseDown()
     {
         Debug.Log("Nail을 클릭했습니다!");
-        if (spriteRenderer != null && sprites.Length > 0)
+        if (_currentSpriteIndex == NAIL_IN)
         {
-            if (currentSpriteIndex == NAIL_IN)
-            {
-                currentSpriteIndex = NAIL_OUT;
-            }
-            else if (currentSpriteIndex == NAIL_OUT)
-            {
-                currentSpriteIndex = NAIL_IN;
-            }
-            spriteRenderer.sprite = sprites[currentSpriteIndex];
+            NailManager.Instance.SelectNail(_myNail);
+        }
+        else if (_currentSpriteIndex == NAIL_OUT)
+        {
+            NailManager.Instance.SelectNail(null);
         }
     }
 }
