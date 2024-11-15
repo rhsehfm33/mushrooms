@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 977243458}
   - component: {fileID: 977243457}
   m_Layer: 6
-  m_Name: circle
+  m_Name: nail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1415,7 +1415,7 @@ GameObject:
   - component: {fileID: 1803216091}
   - component: {fileID: 1803216090}
   m_Layer: 6
-  m_Name: circle (1)
+  m_Name: nail2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
