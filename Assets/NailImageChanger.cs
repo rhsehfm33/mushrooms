@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class NailImageChanger : MonoBehaviour
 {
     private readonly int NAIL_IN = 0;
@@ -14,13 +15,11 @@ public class NailImageChanger : MonoBehaviour
 
     private void Start()
     {
-        // 현재 GameObject의 SpriteRenderer 가져오기
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        if (_spriteRenderer == null)
+        if (sprites == null || sprites.Length == 0)
         {
-            Debug.LogError("SpriteRenderer가 이 GameObject에 없습니다!");
+            Debug.LogError("sprites 배열이 설정되지 않았습니다! 필드를 Inspector에서 설정하세요.");
         }
-
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _myNail = transform.parent.gameObject;
         NailManager.Instance.OnNailSelectEvent += respondToNailSelect;
     }
