@@ -27,7 +27,7 @@ public class HoleClickHandler : MonoBehaviour
     public bool CanPickNail()
     {
         // 감지된 Collider를 저장할 배열
-        Collider2D[] colliders = new Collider2D[1]; // 최대 10개까지 감지
+        Collider2D[] colliders = new Collider2D[1]; // 최대 1개까지 감지
         ContactFilter2D filter = new ContactFilter2D();
         filter.SetLayerMask(LayerMask.GetMask("Nail"));
         int nailCount = myCollider.OverlapCollider(filter, colliders);
