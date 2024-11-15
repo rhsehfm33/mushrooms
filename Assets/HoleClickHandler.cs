@@ -23,11 +23,22 @@ public class HoleClickHandler : MonoBehaviour
         return nailAndPlankCount == 0;
     }
 
+    public void PutNailHere()
+    {
+        GameObject selectedNail = NailManager.Instance.GetSelectedNail();
+        if (selectedNail != null)
+        {
+            selectedNail.transform.SetParent(gameObject.transform, false);
+            NailManager.Instance.SelectNail(null);
+        }
+    }
+
     private void OnMouseDown()
     {
         if (CanPutNail())
         {
             Debug.Log("못을 박을 수 있습니다!");
+            PutNailHere();
         }
     }
 }
