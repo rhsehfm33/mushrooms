@@ -3,10 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class Timer : ManagerPattern<Timer>
 {
     public event Action OnTimeTicking;
-    public static Timer Instance { get; private set; }
 
     [SerializeField]
     private int _timeRemaining = 180;
@@ -18,17 +17,6 @@ public class Timer : MonoBehaviour
         private set => _timeRemaining = value; // 내부에서만 설정 가능
     }
 
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-    }
-    
     void Start()
     {
         _timerCoroutine = StartCoroutine(StartTimer());

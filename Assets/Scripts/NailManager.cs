@@ -1,22 +1,10 @@
 using UnityEngine;
 using System;
 
-public class NailManager : MonoBehaviour
+public class NailManager : ManagerPattern<NailManager>
 {
-    public static NailManager Instance { get; private set; }
     public event Action OnNailSelectEvent;
     private GameObject _selectedNail;
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-    }
 
     public GameObject GetSelectedNail()
     {

@@ -1,21 +1,9 @@
 using System;
 using UnityEngine;
 
-public class Judger : MonoBehaviour
+public class Judger : ManagerPattern<Judger>
 {
     public event Action OnJudgeDone;
-    public static Judger Instance { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-    }
 
     void Start()
     {
