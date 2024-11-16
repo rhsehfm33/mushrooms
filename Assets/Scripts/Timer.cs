@@ -5,7 +5,15 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public static Timer Instance { get; private set; }
-    public int TimeRemaining { get; private set; } = 180; // 읽기 전용 프로퍼티
+
+    [SerializeField] // Inspector에서 수정 가능
+    private int _timeRemaining = 180;
+
+    public int TimeRemaining
+    {
+        get => _timeRemaining; // 읽기 전용
+        private set => _timeRemaining = value; // 내부에서만 설정 가능
+    }
 
     private void Awake()
     {
@@ -28,8 +36,8 @@ public class Timer : MonoBehaviour
         while (TimeRemaining > 0)
         {
             yield return new WaitForSeconds(1f);
-            Debug.Log("Timer Remaining: " + TimeRemaining);
             TimeRemaining--;
+            Debug.Log("Timer Remaining: " + TimeRemaining);
         }
     }
 }
