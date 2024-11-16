@@ -4,6 +4,8 @@ using UnityEngine;
 public class Judger : ManagerPattern<Judger>
 {
     public event Action OnJudgeDone;
+    public event Action OnStageClear;
+    public event Action OnStageFail;
 
     void Start()
     {
@@ -24,11 +26,13 @@ public class Judger : ManagerPattern<Judger>
         {
             Debug.Log("Stage Clear!");
             OnJudgeDone?.Invoke();
+            OnStageClear?.Invoke();
         }
         else if (Timer.Instance.TimeRemaining <= 0)
         {
             Debug.Log("Stage Fail...");
             OnJudgeDone?.Invoke();
+            OnStageFail?.Invoke();
         }
     }
 }
