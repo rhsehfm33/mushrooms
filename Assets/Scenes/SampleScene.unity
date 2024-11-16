@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b6f4104ea14d144af0b1e7b402ec4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeRemaining: 180
+  _timeRemaining: 20
 --- !u!4 &29139393
 Transform:
   m_ObjectHideFlags: 0
