@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    public event Action OnTimeTicking;
     public static Timer Instance { get; private set; }
 
-    [SerializeField] // Inspector에서 수정 가능
+    [SerializeField]
     private int _timeRemaining = 180;
+    private Coroutine _timerCoroutine;
 
     public int TimeRemaining
     {
@@ -28,7 +31,8 @@ public class Timer : MonoBehaviour
     
     void Start()
     {
-        StartCoroutine(StartTimer());
+        _timerCoroutine = StartCoroutine(StartTimer());
+        Judger.Instance.OnJudgeDone += StopTimer;
     }
 
     private IEnumerator StartTimer()
@@ -37,7 +41,12 @@ public class Timer : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             TimeRemaining--;
-            Debug.Log("Timer Remaining: " + TimeRemaining);
+            OnTimeTicking?.Invoke();
         }
+    }
+
+    private void StopTimer()
+    {
+        StopCoroutine(_timerCoroutine); // 타이머 코루틴 중지
     }
 }

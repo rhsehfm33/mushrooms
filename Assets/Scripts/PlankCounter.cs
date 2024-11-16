@@ -18,6 +18,11 @@ public class PlankCounter : MonoBehaviour
         Instance = this;
     }
 
+    public int GetNailedPlank()
+    {
+        return _nailedPlanks;
+    }
+
     public void IncreaseNailedPlank()
     {
         ++_nailedPlanks;
