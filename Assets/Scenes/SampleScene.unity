@@ -244,8 +244,8 @@ Transform:
   m_GameObject: {fileID: 78249161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.33849373, y: 0.8097014, z: 0.084602885}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -894,8 +894,8 @@ Transform:
   m_GameObject: {fileID: 362715699}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.10126285, y: 1.5887383, z: 0.08386749}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1315,6 +1315,7 @@ GameObject:
   - component: {fileID: 755010929}
   - component: {fileID: 755010932}
   - component: {fileID: 755010931}
+  - component: {fileID: 755010933}
   m_Layer: 7
   m_Name: L_with_holes
   m_TagString: Untagged
@@ -1648,6 +1649,18 @@ PolygonCollider2D:
       - {x: 3.25, y: 5.02}
       - {x: 3.24, y: 5.0299997}
   m_UseDelaunayMesh: 0
+--- !u!114 &755010933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755010928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3cce36f20a1d84d993c0e6ab66c5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &788542772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1782,6 +1795,7 @@ GameObject:
   - component: {fileID: 805573742}
   - component: {fileID: 805573741}
   - component: {fileID: 805573740}
+  - component: {fileID: 805573744}
   m_Layer: 7
   m_Name: L_with_holes (1)
   m_TagString: Untagged
@@ -2115,6 +2129,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &805573744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805573739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3cce36f20a1d84d993c0e6ab66c5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &828446915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,8 +2210,8 @@ Transform:
   m_GameObject: {fileID: 1027038380}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.33849373, y: 0.8097014, z: 0.084602885}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2776,6 +2802,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1752430168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1752430170}
+  - component: {fileID: 1752430169}
+  m_Layer: 0
+  m_Name: PlankCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1752430169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752430168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab1a9eccad0b284cb98339d2df150e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1752430170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752430168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905023533
 GameObject:
   m_ObjectHideFlags: 0
@@ -3579,3 +3649,4 @@ SceneRoots:
   - {fileID: 362715701}
   - {fileID: 1027038382}
   - {fileID: 78249163}
+  - {fileID: 1752430170}
