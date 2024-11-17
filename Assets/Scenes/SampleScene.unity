@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeRemaining: 20
+  _judger: {fileID: 257331379}
 --- !u!4 &29139393
 Transform:
   m_ObjectHideFlags: 0
@@ -180,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003e17f2d0a79b34d90d510719baac44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timer: {fileID: 29139392}
 --- !u!1 &60300049
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plankCounter: {fileID: 1752430169}
+  _timer: {fileID: 29139392}
 --- !u!4 &257331380
 Transform:
   m_ObjectHideFlags: 0
@@ -727,6 +730,7 @@ MonoBehaviour:
   _canvas: {fileID: 1662973281}
   _retryMenuSet: {fileID: 1919469510}
   _blocker: {fileID: 1700057666}
+  _judger: {fileID: 257331379}
 --- !u!1001 &652173492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1003,6 +1007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _victorySign: {fileID: 4716335069800981502, guid: 8e3a9b505ab33314298002fadf1b8967, type: 3}
+  _judger: {fileID: 257331379}
 --- !u!1001 &1391733342
 PrefabInstance:
   m_ObjectHideFlags: 0

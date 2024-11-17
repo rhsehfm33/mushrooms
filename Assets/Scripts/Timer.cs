@@ -3,12 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer : ManagerPattern<Timer>
+public class Timer : MonoBehaviour
 {
     public event Action OnTimeTicking;
 
     [SerializeField]
     private int _timeRemaining = 180;
+
+    [SerializeField]
+    private Judger _judger;
+
     private Coroutine _timerCoroutine;
 
     public int TimeRemaining
@@ -20,7 +24,7 @@ public class Timer : ManagerPattern<Timer>
     void Start()
     {
         _timerCoroutine = StartCoroutine(StartTimer());
-        Judger.Instance.OnJudgeDone += StopTimer;
+        _judger.OnJudgeDone += StopTimer;
     }
 
     private IEnumerator StartTimer()

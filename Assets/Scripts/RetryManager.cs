@@ -14,9 +14,12 @@ public class RetryManager : MonoBehaviour
     [SerializeField]
     private GameObject _blocker;
 
+    [SerializeField]
+    private Judger _judger;
+
     void Start()
     {
-        Judger.Instance.OnStageFail += popupRetryMenu;
+        _judger.OnStageFail += popupRetryMenu;
     }
 
     private void popupRetryMenu()

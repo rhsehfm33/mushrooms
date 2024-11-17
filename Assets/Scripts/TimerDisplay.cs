@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class TimerDisplay : MonoBehaviour
 {
+    [SerializeField]
+    private Timer _timer;
+
     private GUIStyle _guiStyle;
 
     private string reformatIntoMMSS(int time)
@@ -15,10 +18,6 @@ public class TimerDisplay : MonoBehaviour
 
     void Start()
     {
-        if (Timer.Instance == null)
-        {
-            Debug.LogError("필요한 Timer 객체가 null입니다!");
-        }
         // GUIStyle 초기화
         _guiStyle = new GUIStyle();
         _guiStyle.fontSize = 100;
@@ -37,7 +36,7 @@ public class TimerDisplay : MonoBehaviour
         // 텍스트 표시
         GUI.Label(
             new Rect(screenPosition.x - 100, guiY - 25, 200, 50),
-            reformatIntoMMSS(Timer.Instance.TimeRemaining),
+            reformatIntoMMSS(_timer.TimeRemaining),
             _guiStyle
         );
     }

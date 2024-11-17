@@ -1,10 +1,13 @@
 using System;
 using UnityEngine;
 
-public class Judger : ManagerPattern<Judger>
+public class Judger : MonoBehaviour
 {
     [SerializeField]
     private PlankCounter _plankCounter;
+
+    [SerializeField]
+    private Timer _timer;
 
     public event Action OnJudgeDone;
     public event Action OnStageClear;
@@ -12,11 +15,11 @@ public class Judger : ManagerPattern<Judger>
 
     void Start()
     {
-        if (Timer.Instance == null)
+        if (_timer == null)
         {
             Debug.LogError("Timer가 Scene에 없습니다!");
         }
-        Timer.Instance.OnTimeTicking += Judge;
+        _timer.OnTimeTicking += Judge;
     }
 
     void Judge()
@@ -27,7 +30,7 @@ public class Judger : ManagerPattern<Judger>
             OnJudgeDone?.Invoke();
             OnStageClear?.Invoke();
         }
-        else if (Timer.Instance.TimeRemaining <= 0)
+        else if (_timer.TimeRemaining <= 0)
         {
             Debug.Log("Stage Fail...");
             OnJudgeDone?.Invoke();
