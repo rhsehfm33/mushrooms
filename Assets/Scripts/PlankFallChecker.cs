@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlankFallChecker : MonoBehaviour
 {
+    [SerializeField]
+    private PlankCounter _plankCounter;
+
     void Start()
     {
-        PlankCounter.Instance.IncreaseNailedPlank();
+        _plankCounter.IncreaseNailedPlank();
     }
 
     void FixedUpdate()
     {
         if (transform.position.y <= -6f)
         {
-            PlankCounter.Instance.DecreaseNailedPlank();
+            _plankCounter.DecreaseNailedPlank();
             Destroy(gameObject);
         }
     }

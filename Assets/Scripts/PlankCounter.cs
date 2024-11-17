@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlankCounter : ManagerPattern<PlankCounter>
+public class PlankCounter : MonoBehaviour
 {
     private int _nailedPlanks = 0;
 

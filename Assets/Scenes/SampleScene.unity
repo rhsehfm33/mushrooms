@@ -416,6 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce170ac8c321fd489bd9be3eda4e27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _plankCounter: {fileID: 1752430169}
 --- !u!4 &257331380
 Transform:
   m_ObjectHideFlags: 0
@@ -425,7 +426,7 @@ Transform:
   m_GameObject: {fileID: 257331378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3608186, y: 1.6479584, z: 0.090204954}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1075,6 +1076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: L Plank With Holes (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4814423414345685534, guid: 6e90d6ee7ba0efb41a5a613a6e43388e, type: 3}
+      propertyPath: _plankCounter
+      value: 
+      objectReference: {fileID: 1752430169}
     - target: {fileID: 5722484441187632392, guid: 6e90d6ee7ba0efb41a5a613a6e43388e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.313
@@ -1892,6 +1897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: L Plank With Holes
       objectReference: {fileID: 0}
+    - target: {fileID: 4814423414345685534, guid: 6e90d6ee7ba0efb41a5a613a6e43388e, type: 3}
+      propertyPath: _plankCounter
+      value: 
+      objectReference: {fileID: 1752430169}
     - target: {fileID: 5722484441187632392, guid: 6e90d6ee7ba0efb41a5a613a6e43388e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.655
