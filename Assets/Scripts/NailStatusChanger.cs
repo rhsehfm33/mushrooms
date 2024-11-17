@@ -13,6 +13,9 @@ public class NailStatusChanger : MonoBehaviour
     private int _currentSpriteIndex = 0;
     private GameObject _myNail;
 
+    [SerializeField]
+    private NailManager _nailManager;
+
     private void Start()
     {
         if (sprites == null || sprites.Length == 0)
@@ -21,12 +24,12 @@ public class NailStatusChanger : MonoBehaviour
         }
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _myNail = transform.parent.gameObject;
-        NailManager.Instance.OnNailSelectEvent += respondToNailSelect;
+        _nailManager.OnNailSelectEvent += respondToNailSelect;
     }
 
     private void respondToNailSelect()
     {
-        if (NailManager.Instance.GetSelectedNail() == _myNail)
+        if (_nailManager.GetSelectedNail() == _myNail)
         {
             _currentSpriteIndex = NAIL_OUT; 
         }
@@ -42,11 +45,11 @@ public class NailStatusChanger : MonoBehaviour
         Debug.Log("Nail을 클릭했습니다!");
         if (_currentSpriteIndex == NAIL_IN)
         {
-            NailManager.Instance.SelectNail(_myNail);
+            _nailManager.SelectNail(_myNail);
         }
         else if (_currentSpriteIndex == NAIL_OUT)
         {
-            NailManager.Instance.SelectNail(null);
+            _nailManager.SelectNail(null);
         }
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-public class NailManager : ManagerPattern<NailManager>
+public class NailManager : MonoBehaviour
 {
     public event Action OnNailSelectEvent;
     private GameObject _selectedNail;
