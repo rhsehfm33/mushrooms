@@ -1008,6 +1008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _victorySign: {fileID: 4716335069800981502, guid: 8e3a9b505ab33314298002fadf1b8967, type: 3}
   _judger: {fileID: 257331379}
+  _sceneController: {fileID: 295056219}
 --- !u!1001 &1391733342
 PrefabInstance:
   m_ObjectHideFlags: 0

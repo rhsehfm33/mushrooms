@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,9 +19,9 @@ public class FadeOutAnimation : MonoBehaviour
         _fadeSpeed = 1.0f / _fadeDuration;
     }
 
-    void Update()
+    public IEnumerator StartAnimation()
     {
-        if (_spriteRenderer != null)
+        while (_spriteRenderer.color.a > 0)
         {
             // 현재 알파 값을 감소시킴
             Color color = _spriteRenderer.color;
@@ -32,11 +33,7 @@ public class FadeOutAnimation : MonoBehaviour
             // 변경된 알파 값을 SpriteRenderer에 반영
             _spriteRenderer.color = color;
 
-            // 완전히 투명해지면 게임 오브젝트를 삭제
-            if (color.a <= 0)
-            {
-                Destroy(gameObject);
-            }
+            yield return null; // 다음 프레임까지 대기
         }
     }
 }
