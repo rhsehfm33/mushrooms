@@ -21,7 +21,7 @@ public class HoleClickHandler : MonoBehaviour
         // 감지된 Collider를 저장할 배열
         Collider2D[] colliders = new Collider2D[10]; // 최대 10개까지 감지
         ContactFilter2D filter = new ContactFilter2D();
-        filter.SetLayerMask(LayerMask.GetMask("Nail", "Plank1"));
+        filter.SetLayerMask(LayerMask.GetMask("Nail", "Plank1", "Plank2"));
         int nailAndPlankCount = _myCollider.OverlapCollider(filter, colliders);
         return nailAndPlankCount == 0;
     }
